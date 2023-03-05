@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIPicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1iS-az-HYs">
+                                <rect key="frame" x="-10" y="54" width="414" height="216"/>
+                                <connections>
+                                    <action selector="dateSet:" destination="BYZ-38-t0r" eventType="valueChanged" id="LHj-I8-xiB"/>
+                                </connections>
+                            </datePicker>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ubw-D6-GaZ">
+                                <rect key="frame" x="10" y="296" width="394" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="L4B-sO-CFW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3bv-qn-sHT"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEA-YY-dTd">
+                                <rect key="frame" x="124" y="546" width="166" height="30"/>
+                                <state key="normal" title="Get picker valiue"/>
+                                <connections>
+                                    <action selector="getPickerValueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5D0-4M-fq3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Et-yp-YzA">
+                                <rect key="frame" x="147" y="278" width="100" height="30"/>
+                                <state key="normal" title="Get date"/>
+                                <connections>
+                                    <action selector="gatDateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zNW-fz-XV8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xEA-YY-dTd" firstAttribute="centerX" secondItem="1iS-az-HYs" secondAttribute="centerX" id="2qM-Ud-jYK"/>
+                            <constraint firstItem="Ubw-D6-GaZ" firstAttribute="top" secondItem="9Et-yp-YzA" secondAttribute="bottom" constant="10" id="3t2-Ri-Xdq"/>
+                            <constraint firstItem="9Et-yp-YzA" firstAttribute="centerX" secondItem="1iS-az-HYs" secondAttribute="centerX" id="VZn-lS-1Vf"/>
+                            <constraint firstItem="1iS-az-HYs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="XDf-Jm-kqC"/>
+                            <constraint firstItem="Ubw-D6-GaZ" firstAttribute="centerX" secondItem="1iS-az-HYs" secondAttribute="centerX" id="n6B-0f-3fI"/>
+                            <constraint firstItem="9Et-yp-YzA" firstAttribute="top" secondItem="1iS-az-HYs" secondAttribute="bottom" constant="10" id="wsD-TB-fqf"/>
+                            <constraint firstItem="xEA-YY-dTd" firstAttribute="top" secondItem="Ubw-D6-GaZ" secondAttribute="bottom" constant="10" id="xb9-Fq-g24"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="LetterPicker" destination="Ubw-D6-GaZ" id="lSl-pW-rmS"/>
+                        <outlet property="dataPicker" destination="1iS-az-HYs" id="1N8-4q-9rc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
